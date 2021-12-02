@@ -1,0 +1,33 @@
+C:\Users\tvega\AppData\Local\Programs\Python\Python310>python.exe connect_sqlite.py
+-----------------------------------------------------------
+      stu_id first_name last_name initials
+0  123456789        Tom      Vega       TV
+1  100006789       Lynn  Johnston       LJ
+Index(['stu_id', 'first_name', 'last_name', 'initials'], dtype='object')
+-----------------------------------------------------------
+   Major_count      department_name
+0            1        Architechture
+1            1    Molecular Biology
+2            1     Computer Science
+3            1   English Literature
+4            1  Applied Mathematics
+Index(['Major_count', 'department_name'], dtype='object')
+-----------------------------------------------------------
+             event_name           hosted_by
+0  Discount Books Sales  English Literature
+Index(['event_name', 'hosted_by'], dtype='object')
+-----------------------------------------------------------
+  first_name last_name            event_name        major_name
+0        Tom      Vega        Expo Fair 2022  Computer Science
+1        Tom      Vega  Food Trucks December  Computer Science
+2        Tom      Vega  Discount Books Sales  Computer Science
+Index(['first_name', 'last_name', 'event_name', 'major_name'], dtype='object')
+-----------------------------------------------------------
+  chair_first_name chair_last_name      department_name
+0             John             Doe    Molecular Biology
+1            Issac          Newton  Applied Mathematics
+2            Frank          Wright        Architechture
+3             Walt         Whitman   English Literature
+4           Odelia        Schwartz     Computer Science
+Index(['chair_first_name', 'chair_last_name', 'department_name'], dtype='object')
+-----------------------------------------------------------
