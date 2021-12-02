@@ -199,8 +199,6 @@ SELECT first_name, last_name, event_name, major_name
     AND s.first_name='Tom'
     AND s.last_name='Vega';
 """
-
-#List the chair name for every department. 
 cursor.execute(query4)
 column_names = [row[0] for row in cursor.description]
 table_data = cursor.fetchall()
@@ -209,10 +207,10 @@ print("-----------------------------------------------------------\r")
 print(df)
 print(df.columns)
 
+#List the chair name for every department. 
 query5 = """
 SELECT chair_first_name, chair_last_name, department_name
 FROM Department
-    
 """
 cursor.execute(query5)
 column_names = [row[0] for row in cursor.description]
