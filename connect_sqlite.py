@@ -139,7 +139,6 @@ cursor.executescript(insert_all_rows)
 #### Select data
 #List the details of students that are attending a named event
 query1 = """
-/*List the details of students that are attending a named event*/
 SELECT s.*
     FROM Student s, Event e, Attending_event a
     WHERE s.stu_id=a.stu_id
