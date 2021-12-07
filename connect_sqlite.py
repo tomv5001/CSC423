@@ -12,7 +12,7 @@ cursor = db_connect.cursor()
 create_dept_table = """
 CREATE TABLE Department (
     dept_id varchar(5) NOT NULL,
-    department_name varchar(20) NOT NULL,
+    department_name varchar(40) NOT NULL CHECK (department_name LIKE 'Department%'),
     chair_first_name varchar(15),
     chair_last_name varchar (15),
     numb_of_faculty int,
@@ -92,11 +92,11 @@ cursor.execute(create_declaring_major_table)
 
 ####Insert rows into tables
 insert_all_rows = """
-INSERT INTO Department VALUES ('bio12','Molecular Biology','John','Doe','15');
-INSERT INTO Department VALUES ('mth11','Applied Mathematics','Issac','Newton','10');
-INSERT INTO Department VALUES ('arch1','Architechture','Frank','Wright','25');
-INSERT INTO Department VALUES ('eng01','English Literature','Walt','Whitman','35');
-INSERT INTO Department VALUES ('csc01','Computer Science','Odelia','Schwartz','27');
+INSERT INTO Department VALUES ('bio12','Department of Molecular Biology','John','Doe','15');
+INSERT INTO Department VALUES ('mth11','Department of Applied Mathematics','Issac','Newton','10');
+INSERT INTO Department VALUES ('arch1','Department of Architechture','Frank','Wright','25');
+INSERT INTO Department VALUES ('eng01','Department of English Literature','Walt','Whitman','35');
+INSERT INTO Department VALUES ('csc01','Department of Computer Science','Odelia','Schwartz','27');
 
 INSERT INTO Major VALUES ('bio','Biology','bio12');
 INSERT INTO Major VALUES ('mth','Mathematics','mth11');
@@ -178,7 +178,7 @@ SELECT event_name, department_name AS hosted_by
     FROM Department d, Event e, Hosting_event h
     WHERE e.event_id=h.event_id
     AND d.dept_id=h.dept_id
-    AND d.department_name='English Literature';
+    AND d.department_name='Department of English Literature';
 """
 cursor.execute(query3)
 column_names = [row[0] for row in cursor.description]
